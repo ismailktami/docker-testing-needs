@@ -1,0 +1,13 @@
+######################### RUN IMAGE######################################
+
+docker run image_name  + commande  
+docker run mydockerimage robot Suites/*
+
+#########################################################################
+
+
+
+######################### BUILD IMAGE ###################################
+docker build --pull -t robotimagedocker .
+docker build --pull -f app/Dockefile  -t robotimagedocker .
+#########################################################################
