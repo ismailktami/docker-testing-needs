@@ -11,3 +11,16 @@ docker run mydockerimage robot Suites/*
 docker build --pull -t robotimagedocker .
 docker build --pull -f app/Dockefile  -t robotimagedocker .
 #########################################################################
+
+
+######################### DOCKER COMPOSE ###################################
+docker-compose run 
+docker-compose build up down
+
+docker-compose up -d influxdb grafana
+echo "--------------------------------------------------------------------------------------"
+echo "Load testing with Grafana dashboard: http://localhost:3000/d/k6/k6-load-testing-results"
+echo "--------------------------------------------------------------------------------------"
+docker-compose run --rm k6 run //scripts//price-reader-api.js
+
+#########################################################################
