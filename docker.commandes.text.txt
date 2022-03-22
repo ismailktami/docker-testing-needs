@@ -23,4 +23,11 @@ echo "Load testing with Grafana dashboard: http://localhost:3000/d/k6/k6-load-te
 echo "--------------------------------------------------------------------------------------"
 docker-compose run --rm k6 run //scripts//price-reader-api.js
 
+
+docker-compose scale commande set number of containers for a service
+used of selenium-grid to run multiple nodes
+
+docker-compose scale chrome=3
+docker-compose scale firefox=3
+
 #########################################################################
