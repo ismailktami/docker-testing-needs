@@ -1,0 +1,7 @@
+docker-compose up -d
+
+run nodes :
+
+docker-compose scale chrome=3 # number of nodes
+
+docker-compose scale firefox=3
