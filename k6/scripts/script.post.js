@@ -18,12 +18,18 @@ export let options = {
 }
 
 export default function () {
-  let res = http.get('https://test.k6.io');
-  check(res,{
-      "status is good":(r)=> r.status === 200
-  })
-  check(res,{
-    "staus timing":(r)=> r.timings.duration < 200
-})
+    var url="127.0.0.1:8080/questions";
+    var data = {
+        "title":"title",
+        "description":"description question",
+        "createdAt":"",
+        "updatedAt":""
+    };
+    let r = http.post("http://127.0.0.1:8080/questions", JSON.stringify(data), {
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+    check(r,{"status is good":(r)=> r.status === 200}
+    )
   sleep(1);
 }
