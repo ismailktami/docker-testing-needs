@@ -1,0 +1,8 @@
+docker build -t cypress-json-formatter .
+docker run -it -v /mnt/c/Users/ismail.ktami/desktop/project:/app/backoffice  --entrypoint sh cypress-json-formatter
+
+yarn run cypress run --tags=@TEST-55234
+
+
+#formatter
+cucumber-json-formatter < cucumber-messages.ndjson > reports/cucumber-report.json
